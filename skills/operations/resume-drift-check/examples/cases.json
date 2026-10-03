@@ -1,0 +1,523 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "name": "matching-control",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "binding": {}
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "binding": {},
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "MATCH"
+      },
+      "expected_advice": "REVIEW_AUTHORIZED_NEXT_STEP"
+    },
+    {
+      "name": "changed-head",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "binding": {}
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "binding": {},
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "DRIFT"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "changed-dirty-bytes",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "tree",
+            "subject": "synthetic-task",
+            "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "binding": {}
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "tree",
+            "subject": "synthetic-task",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "binding": {},
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "DRIFT"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "stale-test-same-head",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "test",
+            "subject": "synthetic-task",
+            "value": "passed",
+            "binding": {
+              "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "tree": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "command": "python check.py"
+            }
+          },
+          {
+            "id": "current-head",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "binding": {}
+          },
+          {
+            "id": "current-tree",
+            "kind": "tree",
+            "subject": "synthetic-task",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "binding": {}
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "test",
+            "subject": "synthetic-task",
+            "value": "passed",
+            "binding": {
+              "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "tree": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+              "command": "python check.py"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          },
+          {
+            "id": "current-head",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "binding": {},
+            "source": "synthetic current source",
+            "evidence": "metadata",
+            "observed_at": "2026-01-01T12:01:00Z"
+          },
+          {
+            "id": "current-tree",
+            "kind": "tree",
+            "subject": "synthetic-task",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "binding": {},
+            "source": "synthetic current source",
+            "evidence": "metadata",
+            "observed_at": "2026-01-01T12:01:00Z"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "STALE",
+        "current-head": "MATCH",
+        "current-tree": "MATCH"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "done-action",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "action",
+            "subject": "synthetic-task",
+            "value": {
+              "outcome": "done",
+              "idempotent": false
+            },
+            "binding": {
+              "operation_id": "sample-op"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "action",
+            "subject": "synthetic-task",
+            "value": {
+              "outcome": "done",
+              "idempotent": false
+            },
+            "binding": {
+              "operation_id": "sample-op"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "DO_NOT_REPEAT"
+      },
+      "expected_advice": "STOP_AND_VERIFY_OUTCOME"
+    },
+    {
+      "name": "uncertain-action",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "action",
+            "subject": "synthetic-task",
+            "value": {
+              "outcome": "uncertain",
+              "idempotent": false
+            },
+            "binding": {
+              "operation_id": "sample-op"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "action",
+            "subject": "synthetic-task",
+            "value": {
+              "outcome": "uncertain",
+              "idempotent": false
+            },
+            "binding": {
+              "operation_id": "sample-op"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "DO_NOT_REPEAT"
+      },
+      "expected_advice": "STOP_AND_VERIFY_OUTCOME"
+    },
+    {
+      "name": "missing-process",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "process",
+            "subject": "synthetic-task",
+            "value": {
+              "state": "running"
+            },
+            "binding": {
+              "pid": 42,
+              "start_token": "start-one",
+              "owner": "sample-owner"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "process",
+            "subject": "synthetic-task",
+            "value": {
+              "state": "missing"
+            },
+            "binding": {},
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "DRIFT"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "starting-process",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "process",
+            "subject": "synthetic-task",
+            "value": {
+              "state": "running"
+            },
+            "binding": {
+              "pid": 42,
+              "start_token": "start-one",
+              "owner": "sample-owner"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "process",
+            "subject": "synthetic-task",
+            "value": {
+              "state": "starting"
+            },
+            "binding": {
+              "pid": 42,
+              "start_token": "start-one",
+              "owner": "sample-owner"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "UNKNOWN"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "changed-approved-bytes",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "approval",
+            "subject": "synthetic-task",
+            "value": "granted",
+            "binding": {
+              "artifact_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "approval",
+            "subject": "synthetic-task",
+            "value": "granted",
+            "binding": {
+              "artifact_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "STALE"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "metadata-only-capability",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "capability",
+            "subject": "synthetic-task",
+            "value": "success",
+            "binding": {
+              "operation": "hello",
+              "model": "sample-model"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "capability",
+            "subject": "synthetic-task",
+            "value": "success",
+            "binding": {
+              "operation": "hello",
+              "model": "sample-model"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "metadata"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "UNKNOWN"
+      },
+      "expected_advice": "REVERIFY_BEFORE_RESUME"
+    },
+    {
+      "name": "combined-demo",
+      "checkpoint": {
+        "schema_version": 1,
+        "saved_at": "2026-01-01T12:00:00Z",
+        "claims": [
+          {
+            "id": "sample",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "binding": {}
+          },
+          {
+            "id": "action",
+            "kind": "action",
+            "subject": "synthetic-task",
+            "value": {
+              "outcome": "uncertain",
+              "idempotent": false
+            },
+            "binding": {
+              "operation_id": "sample-op"
+            }
+          }
+        ]
+      },
+      "observed": {
+        "schema_version": 1,
+        "as_of": "2026-01-01T12:02:00Z",
+        "observations": [
+          {
+            "id": "sample",
+            "kind": "head",
+            "subject": "synthetic-task",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "binding": {},
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          },
+          {
+            "id": "action",
+            "kind": "action",
+            "subject": "synthetic-task",
+            "value": {
+              "outcome": "uncertain",
+              "idempotent": false
+            },
+            "binding": {
+              "operation_id": "sample-op"
+            },
+            "source": "synthetic receipt",
+            "observed_at": "2026-01-01T12:01:00Z",
+            "evidence": "receipt"
+          }
+        ]
+      },
+      "expected_verdicts": {
+        "sample": "DRIFT",
+        "action": "DO_NOT_REPEAT"
+      },
+      "expected_advice": "STOP_AND_VERIFY_OUTCOME"
+    }
+  ]
+}

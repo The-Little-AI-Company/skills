@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<title id="title">Statechart design</title><desc id="desc">Three states connected by transitions inside a bounded system.</desc>
+<rect x="2" y="2" width="60" height="60" rx="10" fill="#101820"/>
+<g fill="none" stroke="#9ae6b4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="11" y="11" width="42" height="42" rx="6"/><circle cx="23" cy="24" r="6"/><circle cx="41" cy="42" r="6"/>
+<path d="M29 24h12v10m-4-4 4 4 4-4M35 42H23v-8m-4 4 4-4 4 4"/>
+</g></svg>
