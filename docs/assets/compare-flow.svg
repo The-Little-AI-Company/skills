@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-labelledby="title desc">
+<title id="title">How a claim comparison works</title>
+<desc id="desc">A saved claim and a supplied observation feed a comparison. The report marks matches, changes and missing evidence. A person verifies the next action. No action runs.</desc>
+<rect width="720" height="240" rx="12" fill="#101820"/>
+<g fill="#17232d" stroke="#bac7d1" stroke-width="2"><rect x="24" y="34" width="188" height="66" rx="8"/><rect x="24" y="140" width="188" height="66" rx="8"/><rect x="278" y="82" width="184" height="76" rx="8"/><rect x="524" y="82" width="172" height="76" rx="8"/></g>
+<g fill="none" stroke="#9ae6b4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M212 67h30v53h34m-10-6 10 6-10 6M212 173h30v-53M462 120h60m-10-6 10 6-10 6"/></g>
+<g fill="#f7f3e8" font-family="system-ui, sans-serif" font-size="18" text-anchor="middle"><text x="118" y="62">Saved claim</text><text x="118" y="168">Supplied observation</text><text x="370" y="113">Compare evidence</text><text x="610" y="113">Verify next step</text></g>
+<g fill="#bac7d1" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle"><text x="118" y="84">What the handoff says</text><text x="118" y="190">What was checked</text><text x="370" y="139">Match, drift, stale or unknown</text><text x="610" y="139">No action runs</text><text x="360" y="228">An unknown action outcome stays on hold. A match does not grant permission.</text></g>
+</svg>

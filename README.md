@@ -1,48 +1,38 @@
 # The Little AI Company skills
 
-Reusable agent skills, organized by category. Each skill has a `SKILL.md` entrypoint and keeps its references, examples, and scripts together.
+Reusable agent skills organized by category. Each skill includes its instructions, examples, limits and validation record.
 
-## Catalog
+| Skill | Category | Purpose | Details |
+| --- | --- | --- | --- |
+| Statechart Design and Review | Design review | Review event-driven lifecycles with explicit states, guards, invariants and traces | [Catalog](catalog/statechart-design-review.md) |
+| Resume drift check 0.2.0 | Recovery checks | Compare saved claims with current observations before resuming work | [Catalog](catalog/resume-drift-check.md) |
 
-| Category | Skill | Use it for |
-| --- | --- | --- |
-| Design | [Statechart Design and Review](skills/design/statechart-design-review/) | Model and review event-driven lifecycles, cancellation, recovery, and concurrency |
+Open [the visual catalog](docs/index.html) from a downloaded copy in your browser. It works offline without scripts, external fonts or tracking. This repository does not require a hosted website.
 
-## Install a skill
+## Install one skill
 
-Clone the collection:
+Use the official [skills CLI](https://github.com/vercel-labs/skills) from the project where you want the skill:
 
-```sh
-git clone https://github.com/The-Little-AI-Company/skills.git
+```text
+pnpm dlx skills@1.7.0 add The-Little-AI-Company/skills --skill resume-drift-check --agent codex
 ```
 
-Copy the selected skill directory into your agent's documented skill location. For Statechart Design and Review, copy `skills/design/statechart-design-review` from inside the cloned repository. Keep the folder name and all its contents. Do not copy the collection root as a single skill.
+For the existing design skill, replace the skill name with `statechart-design-review`. Omit `--agent codex` to choose another supported agent interactively. To inspect the collection before installing:
 
-If you already use the [skills CLI](https://github.com/vercel-labs/skills), you can select this skill by name:
-
-```sh
-skills add The-Little-AI-Company/skills --skill statechart-design-review
+```text
+pnpm dlx skills@1.7.0 add The-Little-AI-Company/skills --list
 ```
 
-The category layout follows the CLI's documented [skill discovery rules](https://github.com/vercel-labs/skills#skill-discovery). Installation locations and discovery rules vary by agent. Consult your agent's current documentation before replacing an existing skill.
+You can also copy the complete chosen folder into your agent's existing skill directory. Do not copy the collection root as one skill. The bundled Python tools require Python 3.10 or later and use only the standard library.
 
-## Use and validate
+## Evidence and limits
 
-Start with the selected skill's README for example prompts, prerequisites, local checks, and validation limits. The Statechart Design and Review scripts use Python 3.10 or newer and the standard library.
+Resume drift check 0.2.0 passed 49 tests on Linux. Independent review reproduced closure of its source-binding and FIFO findings. The Windows 11 check passed 47 suite tests with two POSIX-only skips and 13 additional CLI cases on Python 3.14.3. See [the testing record](skills/operations/resume-drift-check/TESTING.md) and [change history](skills/operations/resume-drift-check/CHANGELOG.md).
 
-From this repository's root:
+All 13 Statechart skill files are unchanged from the previously published source commit `06d9ea5c4ed5e6d4856c5838fbb9b2bd80c4eea8`.
 
-```sh
-cd skills/design/statechart-design-review
-python3 scripts/check_inventory.py examples/minimal-inventory.json
-python3 -m unittest discover -s tests -p 'test_*.py' -v
-python3 tests/export_safety_test.py
-```
+These are bounded code and artifact checks. Neither skill has a measured evaluation of agent effectiveness, time savings or market demand. A matching report grants no authority to act. Review each skill's scope and limitations before use.
 
-The inventory linter checks structure. It does not prove statechart behavior or determinism. The synthetic export model checks a bounded safety invariant, with its limits documented beside the skill.
+## License
 
-## Layout and license
-
-Skills live at `skills/<category>/<skill-name>/SKILL.md`. Add a category when a published skill needs it, and link the skill in the catalog.
-
-The authored material uses the [MIT license](LICENSE). Linked third-party sources retain their own rights and licenses. Source attribution appears with each skill.
+MIT for authored text and code. Cited sources retain their rights.
