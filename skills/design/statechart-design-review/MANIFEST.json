@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "name": "statechart-design-review",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 23,
+      "sha256": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1079,
+      "sha256": "2d151b83c840031e125e03839c438da0eec01d124dc9737cbf2a11f47d4a6461"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5257,
+      "sha256": "82e785065ceb8d49286bc607dfdd271f3bff52947c159d20f6123f56e9175891"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 6544,
+      "sha256": "82101e6913a7800f892ec29b352e9542438d914e0b4698abaaadec5dd17c947f"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 274,
+      "sha256": "771a4631d7476340b465cf4209ebd24ed0d4df98684177c050bf8ea1770d1741"
+    },
+    {
+      "path": "examples/minimal-inventory.json",
+      "bytes": 394,
+      "sha256": "d69a2a9aee087282982e70af3e1fbbb8c540db674713e9e0a555bb7cdaf32858"
+    },
+    {
+      "path": "references/examples.md",
+      "bytes": 4526,
+      "sha256": "a352d394357449fec1b85ba59bb3c5f0549e149e78694c5b93ca88fcb1b2a399"
+    },
+    {
+      "path": "references/execution-review.md",
+      "bytes": 5628,
+      "sha256": "bbb584b35b06fe3b22c2f01aa99903e24e7ee968555a908b4e38617e290f4fcd"
+    },
+    {
+      "path": "references/harel-foundations.md",
+      "bytes": 3804,
+      "sha256": "9353ba18c76ef8f208a7a849346640a99ac10debb42ba11938a77e42ff436480"
+    },
+    {
+      "path": "scripts/check_inventory.py",
+      "bytes": 4382,
+      "sha256": "b788a077179ba9061dc1fb49e76d060d566308e0c40f00fa886d1bd51adaa111"
+    },
+    {
+      "path": "tests/export_safety_test.py",
+      "bytes": 3485,
+      "sha256": "a588e05b3679e9e2fb0af797f3e5d70cee517b9855f0f6043deab0f42551a513"
+    },
+    {
+      "path": "tests/test_inventory.py",
+      "bytes": 2637,
+      "sha256": "65dc12d952d9a45299c23c4e6b87b6b7384f581ad8777a202b98aed595edfb66"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Statechart Design and Review"
+  short_description: "Design and verify complex event-driven lifecycles"
+  default_prompt: "Use $statechart-design-review to model this lifecycle, resolve event ordering, and derive implementation checks and tests."

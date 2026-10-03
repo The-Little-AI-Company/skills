@@ -1,0 +1,12 @@
+{
+  "states": [
+    {"id": "Root", "kind": "compound", "initial": "Idle"},
+    {"id": "Idle", "kind": "atomic", "parent": "Root"},
+    {"id": "Busy", "kind": "atomic", "parent": "Root"}
+  ],
+  "events": ["START", "DONE"],
+  "transitions": [
+    {"id": "start", "source": "Idle", "event": "START", "target": "Busy"},
+    {"id": "done", "source": "Busy", "event": "DONE", "target": "Idle"}
+  ]
+}
