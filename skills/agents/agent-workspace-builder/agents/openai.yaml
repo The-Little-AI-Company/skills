@@ -1,4 +1,16 @@
 interface:
-  display_name: "Agent Workspace Builder"
-  short_description: "Build agent capabilities, teams, and a GUI with Kanban"
-  default_prompt: "Use $agent-workspace-builder to extend this agent with real capabilities and a persistent workspace GUI, including Kanban, task controls, artifacts, and agent teams."
+  display_name: Super Manus Builder
+  short_description: Build your own agent command center with tools and teams
+  default_prompt: 'Use $agent-workspace-builder to build my Super Manus: inspect this
+    project, add the tools it needs, and implement a persistent GUI with Kanban, task
+    controls, editable artifacts, and real agent teams. Start with one complete request-to-artifact
+    workflow and verify it.'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,9 +1,15 @@
 ---
 name: opendots-super-manus
-description: Build, extend, and operate CopilotKit OpenDots as a Manus-style execution workspace with agent teams, durable tasks, wide research, browser and computer use, documents, spreadsheets, slides, websites, games, image generation, editable video production, audio, connectors, and automations. Use for OpenDots Super Manus requests, Manus capability parity audits, provider integration, or complete multi-step deliverables in an OpenDots project. Includes current-source coverage, fal and Higgsfield integration, Codex image-tool routing, implementation contracts, and offline checks. A skill does not itself provision services or establish live feature parity.
+description: "Build Super Manus on CopilotKit OpenDots: agent teams, durable tasks, research, browser/computer use, editable documents, websites, games, image and video production, audio, connectors, and automation. Use to extend or operate an OpenDots project, audit Manus-style capability coverage, integrate providers, or prepare an evidence-based Super Manus demo or launch. Includes fal/Higgsfield helpers, Codex image-tool routing, source-linked capability coverage, and implementation checks. The target application still needs implementation, configuration, and live verification."
 ---
 
-# OpenDots Super Manus
+# Super Manus for OpenDots
+
+**Give your OpenDots agents a bigger job.**
+
+Build a workspace where teams can research, create, revise, and finish work you can inspect. This is the OpenDots edition of The Little AI Company’s independent Super Manus skill family. Keep the install ID `opendots-super-manus`.
+
+For a first demonstration, connect one real request to persistent tasks, an actual tool, an editable artifact, and a visible revision. Expand through the user’s requested capabilities after that complete slice. For a demo or launch request, read [show and share](references/show-and-share.md) and use observed results.
 
 Turn an outcome into verified work that the user can inspect, edit, resume, and reuse. Cover the full requested workflow, including editable sources and delivery. Match the user's scope and budget; do not turn a small task into a platform rewrite.
 

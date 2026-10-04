@@ -1,6 +1,10 @@
-# OpenDots Super Manus
+# Super Manus for OpenDots
 
-A researched skill for building and operating a Manus-style workspace on [CopilotKit OpenDots](https://github.com/CopilotKit/OpenDots), with agent teams and image/video production.
+**Give your OpenDots agents a bigger job.**
+
+Build a workspace where agents can research a brief, divide the work, create files and media, and bring back results you can inspect and edit. This skill directs the implementation on [CopilotKit OpenDots](https://github.com/CopilotKit/OpenDots), with concrete integration points and checks for what actually works.
+
+From The Little AI Company’s independent Super Manus skill family.
 
 ## Install
 
@@ -21,6 +25,10 @@ Ask your agent:
 Or:
 
 > Use opendots-super-manus to prepare a 30-second product video with generated stills, narration, captions, and an editable timeline. Inspect the available tools and provider access first, preserve individual shots for later editing, and stay within my stated budget.
+
+## Make the first demo worth sharing
+
+Build one request-to-artifact workflow, open its actual output, make a visible edit, and verify that the task survives refresh. Use the [demo playbook](references/show-and-share.md) to record a reproducible result. If you are starting from a different runtime, use [Super Manus Builder](https://skills.sh/the-little-ai-company/skills/agent-workspace-builder).
 
 ## Included
 

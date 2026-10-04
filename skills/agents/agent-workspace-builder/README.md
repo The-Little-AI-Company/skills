@@ -1,33 +1,61 @@
-# Agent Workspace Builder
+# Super Manus Builder
 
-A runtime-independent skill that directs an agent to build reusable tools and a persistent workspace GUI with Kanban, task controls, editable artifacts, and agent teams.
+**Make your agent build its own command center.**
 
-## Install
+Give your coding agent a job: build the tools and workspace it needs to finish the next one.
+
+Super Manus Builder is an open-source skill from The Little AI Company. It directs an agent to add missing capabilities, register real tools, and build a GUI where you can assign work, watch tasks move, inspect results, and make changes.
+
+## Try it in your project
+
+Use a coding agent with access to your project and permission to edit it. Run:
 
 ```sh
 npx skills add The-Little-AI-Company/skills --skill agent-workspace-builder
 ```
 
-Run from your target project and choose an agent. Append `--agent codex` to select Codex. Python 3.10 or later is required for the bundled standard-library scripts.
+Then give the agent this prompt:
 
-## Use
+```text
+Use agent-workspace-builder to build my Super Manus.
 
-> Use agent-workspace-builder to inspect this agent runtime, build its missing capabilities, and create a GUI with Kanban, task details, real progress, artifact editing, team activity, and settings. Implement a complete request-to-artifact slice first, then finish the requested features. Preserve the existing stack and stay within my budget.
+Inspect this project and keep the stack that already works. Build a persistent
+GUI with Kanban, task details, pause/resume/cancel controls, editable artifacts,
+and a capability catalog. Use independent agent workers where the runtime
+supports them, and show their real activity.
 
-For a narrower first slice:
+Start with a CSV-analysis workflow. When a required tool is missing, implement
+it, test it, register it, and resume the task. Let me open and revise the result.
+Keep tasks and outputs across refresh and restart. Label sample data synthetic.
 
-> Give this Python CLI agent a local workspace GUI. Implement a CSV-analysis capability, register it as a real tool, and let me create, run, inspect, and revise analysis tasks from the board. Preserve tasks and outputs across refresh and restart.
+Use existing model access. My external-spend ceiling is $0. Finish the local
+workflow, and report any provider-dependent features that need configuration.
+```
 
-## What it builds
+The install command adds the skill. Your agent then builds the application in your environment. Model usage and external providers can have separate costs. Append `--agent codex` to the install command to select Codex directly; omit it to choose interactively.
 
-- A capability construction loop: discover, implement, test, register, configure, verify, expose, and resume the original task.
-- A durable board with Backlog, Ready, Running, Blocked, Review, Done, and Canceled columns; explicit paused and pending-cancellation states.
-- Task details with dependencies, attempts, actual events, costs, controls, evidence, and artifact links.
-- Capability catalog, artifact workspace, agent-team visibility, connectors, settings, and schedules.
-- Integration contracts that adapt to the actual agent runtime; no OpenDots requirement.
-- Research, office files, code/apps/games, image/video/audio, browser work, and automations through 60 researched reference capabilities.
+## The part worth showing
 
-Read [SKILL.md](SKILL.md), [capability construction](references/capability-construction.md), [runtime integration](references/runtime-integration.md), and [GUI/Kanban behavior](references/gui-kanban.md).
+Ask for an analysis tool your agent does not have yet. Watch it create the tool, connect it to a real task, produce an output, and let you edit that output from the workspace.
+
+That is the first demonstration to build and verify. [The demo playbook](references/show-and-share.md) explains what to record, how to make it reproducible, and what evidence supports each claim.
+
+## Where you can take it
+
+| Build goal | What the skill directs the agent to implement |
+| --- | --- |
+| Research desk | Source-backed research, task assignments, reports, and editable tables |
+| Creative studio | Images, storyboards, video, narration, captions, and editable source tracks |
+| Agent command center | Kanban, dependencies, real worker activity, controls, and restart recovery |
+| Working tool collection | Discover, implement, test, register, and reuse missing capabilities |
+| Delivery workspace | Documents, decks, spreadsheets, code, previews, downloads, and revisions |
+| Connected workflows | Configured APIs/MCP, schedules, account scope, and spending limits |
+
+The bundle maps 60 researched capability families to implementation paths and acceptance checks. It includes fal/Higgsfield queue helpers, task/team contracts, and a board snapshot checker. Its Python scripts require Python 3.10 or later and the standard library.
+
+[Read the skill](SKILL.md) · [Inspect the capability map](references/manus-capabilities.md) · [See the GUI/Kanban contract](references/gui-kanban.md)
+
+Building on CopilotKit? Use [Super Manus for OpenDots](https://skills.sh/the-little-ai-company/skills/opendots-super-manus).
 
 ## Checks
 
@@ -44,6 +72,6 @@ The board checker inspects supplied snapshots only. It cannot authenticate evide
 
 This package is a skill and helper collection, not a prebuilt dashboard application. The agent must implement and verify the requested app in its actual environment. Instructions cannot create missing accounts, bypass host limits, turn one context into independent agents, or grant native Codex tools to another runtime.
 
-22 media fixture tests and 14 workspace snapshot tests passed. Live providers, deployed GUI behavior, and comparative agent effectiveness were not tested. A successful structural check is advisory. See [acceptance](references/acceptance.md).
+22 media fixture tests and 14 workspace snapshot tests passed before this presentation update. Live providers, deployed GUI behavior, and comparative agent effectiveness were not tested. A successful structural check is advisory. See [acceptance](references/acceptance.md).
 
 MIT for authored text and code. External sources retain their rights. This is independent work from The Little AI Company, with no affiliation with the cited vendors.

@@ -2,12 +2,30 @@
 
 Reusable agent skills organized by category. Each skill includes its instructions, examples, limits and validation record.
 
+## Build your Super Manus
+
+**Make your agent build its own command center.**
+
+Super Manus Builder gives your coding agent instructions for building tools, a persistent Kanban workspace, agent teams, and results you can edit. Start with a real task; have the agent build the missing capability and use it.
+
+```sh
+npx skills add The-Little-AI-Company/skills --skill agent-workspace-builder
+```
+
+[Get the first-build prompt](skills/agents/agent-workspace-builder/README.md) · [Find it on skills.sh](https://skills.sh/the-little-ai-company/skills/agent-workspace-builder)
+
+Already using CopilotKit OpenDots? [Use the OpenDots edition](skills/agents/opendots-super-manus/README.md).
+
+These packages contain skills and local helpers. Your agent must implement and verify the workspace. Model access and paid services are configured separately.
+
+## The collection
+
 | Skill | Category | Purpose | Details |
 | --- | --- | --- | --- |
 | Statechart Design and Review | Design review | Review event-driven lifecycles with explicit states, guards, invariants and traces | [Catalog](catalog/statechart-design-review.md) |
 | Resume drift check 0.2.0 | Recovery checks | Compare saved claims with current observations before resuming work | [Catalog](catalog/resume-drift-check.md) |
-| Agent Workspace Builder 0.1.0 | Agent workspaces | Extend any agent with reusable capabilities, GUI, Kanban, artifacts, and teams | [Catalog](catalog/agent-workspace-builder.md) |
-| OpenDots Super Manus 0.1.0 | Agent workspaces | Build Manus-style workflows, agent teams, and editable image/video production on OpenDots | [Catalog](catalog/opendots-super-manus.md) |
+| Super Manus Builder 0.2.0 | Agent workspaces | Extend any agent with reusable capabilities, GUI, Kanban, artifacts, and teams | [Catalog](catalog/agent-workspace-builder.md) |
+| Super Manus for OpenDots 0.2.0 | Agent workspaces | Build Manus-style workflows, agent teams, and editable image/video production on OpenDots | [Catalog](catalog/opendots-super-manus.md) |
 
 Open [the visual catalog](docs/index.html) from a downloaded copy in your browser. It works offline without scripts, external fonts or tracking. This repository does not require a hosted website.
 
@@ -27,7 +45,7 @@ pnpm dlx skills@1.7.0 add The-Little-AI-Company/skills --list
 
 You can also copy the complete chosen folder into your agent's existing skill directory. Do not copy the collection root as one skill. The bundled Python tools require Python 3.10 or later and use only the standard library.
 
-Install OpenDots Super Manus:
+Install Super Manus for OpenDots:
 
 ```sh
 npx skills add The-Little-AI-Company/skills --skill opendots-super-manus
@@ -49,11 +67,13 @@ Resume drift check 0.2.0 passed 49 tests on Linux. Independent review reproduced
 
 All 13 Statechart skill files are unchanged from the previously published source commit `06d9ea5c4ed5e6d4856c5838fbb9b2bd80c4eea8`.
 
-OpenDots Super Manus passed 22 offline queue tests and two independent workflow checks. Its 60-capability map is an implementation guide; live providers and a complete OpenDots deployment were not verified.
+The OpenDots skill passed 22 offline queue tests and two independent workflow checks. Its 60-capability map is an implementation guide; live providers and a complete OpenDots deployment were not verified.
 
-Agent Workspace Builder passed the same 22 media fixture tests plus 14 workspace snapshot checks. It guides implementation of the GUI and capabilities; it does not bundle a finished application.
+The generic skill passed the same 22 media fixture tests plus 14 workspace snapshot checks. It guides implementation of the GUI and capabilities; it does not bundle a finished application.
 
 These are bounded code and artifact checks. No skill in this collection has a measured evaluation of agent effectiveness, time savings or market demand. A matching report grants no authority to act. Review each skill's scope and limitations before use.
+
+[Demo and launch drafts](docs/super-manus-launch.md) are available for promotion. They describe the published skill and distinguish intended builds from observed results.
 
 ## License
 

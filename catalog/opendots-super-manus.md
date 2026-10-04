@@ -1,6 +1,8 @@
-# OpenDots Super Manus
+# Super Manus for OpenDots
 
-Category: Agent workspaces. Version: 0.1.0. Published October 4, 2026 UTC.
+Give your OpenDots agents a bigger job.
+
+Category: Agent workspaces. Version: 0.2.0. Published October 4, 2026 UTC.
 
 Build and operate Manus-style workflows on CopilotKit OpenDots: bounded agent teams, research, editable deliverables, image/video production, connectors, and durable work.
 
@@ -19,3 +21,5 @@ The bundle includes fal/Higgsfield queue helpers, OpenDots source inspection, te
 Validation: 22 offline queue tests and two bounded independent workflow checks. Live provider calls, production integrations, comparative agent effectiveness, and cost savings were not verified. Installing this skill does not establish full Manus parity or deploy an application.
 
 Independent work by The Little AI Company. No affiliation with the referenced vendors. MIT for authored text and code; sources retain their rights.
+
+The existing install ID stays unchanged. Version 0.2.0 adds clearer positioning, a first-use workflow, and an evidence-based demo and sharing playbook; it does not claim new production integrations.

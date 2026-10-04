@@ -1,9 +1,19 @@
 ---
 name: agent-workspace-builder
-description: Build an agent's own reusable capabilities and a persistent workspace GUI with Kanban, task controls, artifacts, agent teams, memory, connectors, research, code, documents, images, video, and automation. Use when asked to make an agent more capable, build a generic Manus-style assistant, create an agent dashboard or control room, add missing tools, or extend an existing agent framework. Works across runtimes by inspecting and adapting the actual host; no OpenDots dependency. Includes capability contracts, GUI and Kanban behavior, durable execution, provider helpers, and evidence checks.
+description: "Build your own Super Manus: a coding agent that extends its tools and creates a persistent GUI with Kanban, real task controls, agent teams, and editable results. Use to build or extend an agent workspace, add missing capabilities, create a Manus-style assistant, or prepare an evidence-based Super Manus demo or launch. Adapts to the actual runtime; no OpenDots dependency. Covers research, code, documents, images, video, connectors, and automation with implementation contracts and local helpers. The target agent must implement and verify the application."
 ---
 
-# Agent Workspace Builder
+# Super Manus Builder
+
+**Make your agent build its own command center.**
+
+Build the tools, interface, and persistent execution needed to finish the user’s work. Super Manus is The Little AI Company’s independent skill family; this runtime-independent edition keeps the install ID `agent-workspace-builder`.
+
+## Start with a visible result
+
+When the user requests a first build without a specific workflow, start with a local CSV-analysis workspace: accept an input, create real tasks, implement and register a missing analysis tool, show an editable report/chart, then retain it across refresh and restart. Label sample data synthetic. Use existing model access and a zero external-spend ceiling until the user authorizes costs. Continue through the requested broader scope after this first slice.
+
+For a demo or launch request, read [show and share](references/show-and-share.md). Base promotional claims on observed results.
 
 Turn the agent into a useful working system by building actual tools, connecting them to persistent execution, and exposing their results in an understandable interface. Reuse the current framework and functioning components. A skill alone does not install capabilities or launch background workers.
 

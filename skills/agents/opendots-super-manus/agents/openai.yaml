@@ -1,8 +1,9 @@
 interface:
-  display_name: OpenDots Super Manus
-  short_description: Build a capable OpenDots workspace with agent teams
-  default_prompt: Use $opendots-super-manus to extend this OpenDots project with Manus-style
-    workflows, agent teams, and image and video production.
+  display_name: Super Manus for OpenDots
+  short_description: Build Super Manus teams and media workflows on OpenDots
+  default_prompt: Use $opendots-super-manus to build Super Manus in this OpenDots
+    project, with agent teams, durable tasks, editable artifacts, and configured image/video
+    workflows. Implement and verify the requested capabilities.
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
