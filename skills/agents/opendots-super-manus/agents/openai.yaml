@@ -1,0 +1,14 @@
+interface:
+  display_name: OpenDots Super Manus
+  short_description: Build a capable OpenDots workspace with agent teams
+  default_prompt: Use $opendots-super-manus to extend this OpenDots project with Manus-style
+    workflows, agent teams, and image and video production.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

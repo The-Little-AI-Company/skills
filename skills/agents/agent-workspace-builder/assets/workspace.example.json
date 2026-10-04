@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "example": true,
+  "capabilities": [
+    {
+      "id": "local-report",
+      "implemented": true,
+      "configured": true,
+      "verified": false,
+      "tool_binding": "report.create",
+      "evidence": []
+    },
+    {
+      "id": "video-generate",
+      "implemented": false,
+      "configured": false,
+      "verified": false,
+      "evidence": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "brief",
+      "title": "Prepare a local report",
+      "state": "ready",
+      "dependencies": [],
+      "capabilities": [
+        "local-report"
+      ],
+      "artifacts": [],
+      "evidence": []
+    },
+    {
+      "id": "film",
+      "title": "Generate approved video",
+      "state": "blocked",
+      "dependencies": [
+        "brief"
+      ],
+      "capabilities": [
+        "video-generate"
+      ],
+      "blocker": "Provider adapter and credentials missing; no paid budget authorized.",
+      "artifacts": [],
+      "evidence": []
+    }
+  ]
+}

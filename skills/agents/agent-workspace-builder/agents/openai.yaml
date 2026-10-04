@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Workspace Builder"
+  short_description: "Build agent capabilities, teams, and a GUI with Kanban"
+  default_prompt: "Use $agent-workspace-builder to extend this agent with real capabilities and a persistent workspace GUI, including Kanban, task controls, artifacts, and agent teams."

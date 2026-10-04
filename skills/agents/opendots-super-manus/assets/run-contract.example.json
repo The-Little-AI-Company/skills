@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "example": true,
+  "run_id": "launch-demo",
+  "owner_ref": "resolved-authenticated-owner",
+  "space_ref": "resolved-authorized-space",
+  "goal": "Produce an editable 30-second product demonstration",
+  "capabilities": [
+    "C20",
+    "C23",
+    "C25",
+    "C28"
+  ],
+  "inputs": [],
+  "deliverables": [
+    {
+      "type": "video",
+      "duration_seconds": 30,
+      "aspect_ratio": "9:16",
+      "editable_source": true
+    }
+  ],
+  "budget": {
+    "currency": "USD",
+    "approved_limit": 0,
+    "approval_ref": null
+  },
+  "execution": {
+    "max_workers": 3,
+    "max_media_jobs": 1,
+    "deadline": null
+  },
+  "authorization": {
+    "external_send": false,
+    "publish": false
+  },
+  "acceptance": [
+    "Playable export",
+    "Editable timeline reproduces export",
+    "No unsupported product claims"
+  ],
+  "tasks": []
+}

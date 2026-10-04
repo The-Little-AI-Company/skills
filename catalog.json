@@ -2,7 +2,7 @@
   "schema_version": 1,
   "title": "The Little AI Company skills",
   "status": "Published collection",
-  "checked_at": "2026-10-03",
+  "checked_at": "2026-10-04",
   "source_commit": "06d9ea5c4ed5e6d4856c5838fbb9b2bd80c4eea8",
   "entries": [
     {
@@ -142,6 +142,102 @@
         }
       ],
       "license": "MIT for authored code and documentation."
+    },
+    {
+      "id": "opendots-super-manus",
+      "title": "OpenDots Super Manus",
+      "category": "Agent workspaces",
+      "status": "Published v0.1.0",
+      "version": "0.1.0",
+      "summary": "Build Manus-style execution workflows, agent teams, and editable media production on CopilotKit OpenDots.",
+      "icon": "opendots.svg",
+      "skill_path": "skills/agents/opendots-super-manus",
+      "catalog_path": "catalog/opendots-super-manus.md",
+      "what": [
+        "60 source-linked capabilities, implementation contracts, execution playbooks, and acceptance checks.",
+        "Local fal/Higgsfield queue helper and read-only OpenDots audit."
+      ],
+      "when": [
+        "Building, auditing, or operating an OpenDots workspace with agent teams and complete deliverables."
+      ],
+      "avoid": [
+        "Do not treat installation as a working application or access to paid provider accounts."
+      ],
+      "installation": [
+        "npx skills add The-Little-AI-Company/skills --skill opendots-super-manus",
+        "Python 3.10 or later for scripts; standard library only."
+      ],
+      "commands": [
+        "python scripts/check_bundle.py",
+        "python scripts/test_media_queue.py",
+        "python scripts/audit_opendots.py /path/to/OpenDots"
+      ],
+      "example": [
+        "Audit the checkout, build durable image/video jobs, and preserve an editable timeline for later shot changes."
+      ],
+      "limits": [
+        "Live providers and production app integration were not tested.",
+        "Local queue helper is single-operator and does not enforce shared budgets.",
+        "Native Codex image tools do not automatically exist inside OpenDots."
+      ],
+      "evaluations": [
+        "22 offline queue tests and two bounded independent-agent workflow checks passed.",
+        "No comparative agent-effectiveness or savings measurement."
+      ],
+      "sources": [
+        {
+          "label": "Source register",
+          "url": "https://github.com/The-Little-AI-Company/skills/blob/main/skills/agents/opendots-super-manus/references/sources.md"
+        }
+      ],
+      "license": "MIT for authored text and code. Sources retain their rights."
+    },
+    {
+      "id": "agent-workspace-builder",
+      "title": "Agent Workspace Builder",
+      "category": "Agent workspaces",
+      "status": "Published v0.1.0",
+      "version": "0.1.0",
+      "summary": "Extend an agent with real capabilities and a persistent GUI, Kanban, editable artifacts, and teams.",
+      "icon": "workspace.svg",
+      "skill_path": "skills/agents/agent-workspace-builder",
+      "catalog_path": "catalog/agent-workspace-builder.md",
+      "what": [
+        "Runtime-independent capability construction and registration loop.",
+        "GUI/Kanban behavior, durable execution, team contracts, and 60 reference capabilities."
+      ],
+      "when": [
+        "Building or extending an agent runtime with tools and a usable workspace."
+      ],
+      "avoid": [
+        "Do not treat skill installation as a deployed GUI or provider access."
+      ],
+      "installation": [
+        "npx skills add The-Little-AI-Company/skills --skill agent-workspace-builder"
+      ],
+      "commands": [
+        "python scripts/check_bundle.py",
+        "python scripts/test_workspace_check.py",
+        "python scripts/workspace_check.py assets/workspace.example.json",
+        "python scripts/test_media_queue.py"
+      ],
+      "example": [
+        "Build a CSV-analysis tool and a GUI for creating, running, and revising tasks."
+      ],
+      "limits": [
+        "Snapshot checks trust supplied data and provide no authorization.",
+        "No live provider, deployed GUI, or comparative effectiveness verification."
+      ],
+      "evaluations": [
+        "22 offline media tests and 14 workspace snapshot checks passed."
+      ],
+      "sources": [
+        {
+          "label": "Research sources",
+          "url": "https://github.com/The-Little-AI-Company/skills/blob/main/skills/agents/agent-workspace-builder/references/sources.md"
+        }
+      ],
+      "license": "MIT for authored material. Sources retain their rights."
     }
   ]
 }

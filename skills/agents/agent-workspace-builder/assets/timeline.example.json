@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "example": true,
+  "id": "launch-demo-timeline",
+  "revision": 1,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "duration_frames": 900,
+  "assets": [
+    {
+      "id": "product-shot",
+      "uri": "assets/product-shot.mp4",
+      "sha256": null,
+      "provenance": {
+        "kind": "user-upload",
+        "rights": "verify"
+      }
+    },
+    {
+      "id": "voice",
+      "uri": "assets/voice.wav",
+      "sha256": null,
+      "provenance": {
+        "kind": "generated",
+        "provider_job_id": null
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "id": "visual",
+      "kind": "video",
+      "items": [
+        {
+          "id": "shot-01",
+          "asset_id": "product-shot",
+          "start_frame": 0,
+          "duration_frames": 900,
+          "source_in_frame": 0,
+          "transform": {
+            "fit": "contain"
+          }
+        }
+      ]
+    },
+    {
+      "id": "narration",
+      "kind": "audio",
+      "items": [
+        {
+          "id": "narration-01",
+          "asset_id": "voice",
+          "start_frame": 0,
+          "duration_frames": 900,
+          "gain_db": 0
+        }
+      ]
+    },
+    {
+      "id": "captions",
+      "kind": "captions",
+      "items": []
+    }
+  ],
+  "render": {
+    "status": "not-rendered",
+    "output": null
+  },
+  "notes": "Example only; assets do not exist. Populate hashes and verify source durations before rendering."
+}

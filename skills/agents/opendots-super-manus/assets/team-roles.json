@@ -1,0 +1,90 @@
+{
+  "roles": [
+    {
+      "role": "coordinator",
+      "goal": "Own contract, dependencies, budget, integration, and delivery",
+      "tool_categories": [
+        "task_control",
+        "artifact_read"
+      ],
+      "expected_output": "Integrated deliverable and evidence",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "researcher",
+      "goal": "Find primary evidence and fill assigned schema",
+      "tool_categories": [
+        "search",
+        "fetch",
+        "artifact_write"
+      ],
+      "expected_output": "Sourced rows and unknowns",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "analyst",
+      "goal": "Compute from preserved data and verify metrics",
+      "tool_categories": [
+        "shell",
+        "spreadsheet",
+        "artifact_write"
+      ],
+      "expected_output": "Reproducible dataset and charts",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "writer",
+      "goal": "Draft in the requested voice from verified evidence",
+      "tool_categories": [
+        "artifact_read",
+        "document_write"
+      ],
+      "expected_output": "Editable copy/document",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "designer",
+      "goal": "Create and inspect visual assets within the brief",
+      "tool_categories": [
+        "image_generate",
+        "image_edit",
+        "artifact_write"
+      ],
+      "expected_output": "Assets and style metadata",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "video-editor",
+      "goal": "Build editable timelines, captions, sound and exports",
+      "tool_categories": [
+        "media_generate",
+        "render",
+        "artifact_write"
+      ],
+      "expected_output": "Timeline, source assets and final exports",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "engineer",
+      "goal": "Implement the assigned module and verify behavior",
+      "tool_categories": [
+        "shell",
+        "code",
+        "browser"
+      ],
+      "expected_output": "Patch and meaningful test receipts",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "reviewer",
+      "goal": "Independently verify acceptance from raw artifacts",
+      "tool_categories": [
+        "artifact_read",
+        "test",
+        "browser"
+      ],
+      "expected_output": "Evidence-backed findings and verdict",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    }
+  ]
+}
