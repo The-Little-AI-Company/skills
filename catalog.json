@@ -147,8 +147,8 @@
       "id": "opendots-super-manus",
       "title": "Super Manus for OpenDots",
       "category": "Agent workspaces",
-      "status": "Published v0.2.0",
-      "version": "0.2.0",
+      "status": "Published v0.3.0",
+      "version": "0.3.0",
       "summary": "Build Super Manus on OpenDots with durable teams, research, and editable media workflows.",
       "icon": "opendots.svg",
       "skill_path": "skills/agents/opendots-super-manus",
@@ -156,7 +156,8 @@
       "what": [
         "60 source-linked capabilities, implementation contracts, execution playbooks, and acceptance checks.",
         "Local fal/Higgsfield queue helper and read-only OpenDots audit.",
-        "First-use build prompt and an evidence-based demo/sharing playbook. No automatic social posting."
+        "First-use build prompt and an evidence-based demo/sharing playbook. No automatic social posting.",
+        "Invention mode: old mechanisms under new constraints, prior-art checks, LLM-oriented interfaces, and falsifiable experiments."
       ],
       "when": [
         "Building, auditing, or operating an OpenDots workspace with agent teams and complete deliverables."
@@ -179,7 +180,8 @@
       "limits": [
         "Live providers and production app integration were not tested.",
         "Local queue helper is single-operator and does not enforce shared budgets.",
-        "Native Codex image tools do not automatically exist inside OpenDots."
+        "Native Codex image tools do not automatically exist inside OpenDots.",
+        "Invention seeds have unverified novelty; improved creativity and live-repair performance are unmeasured."
       ],
       "evaluations": [
         "22 offline queue tests and two bounded independent-agent workflow checks passed.",
@@ -197,8 +199,8 @@
       "id": "agent-workspace-builder",
       "title": "Super Manus Builder",
       "category": "Agent workspaces",
-      "status": "Published v0.2.0",
-      "version": "0.2.0",
+      "status": "Published v0.3.0",
+      "version": "0.3.0",
       "summary": "Make your agent build its own command center: tools, Kanban, teams, and results you can edit.",
       "icon": "workspace.svg",
       "skill_path": "skills/agents/agent-workspace-builder",
@@ -206,7 +208,8 @@
       "what": [
         "Runtime-independent capability construction and registration loop.",
         "GUI/Kanban behavior, durable execution, team contracts, and 60 reference capabilities.",
-        "First-use build prompt and an evidence-based demo/sharing playbook. No automatic social posting."
+        "First-use build prompt and an evidence-based demo/sharing playbook. No automatic social posting.",
+        "Invention mode: old mechanisms under new constraints, prior-art checks, LLM-oriented interfaces, and falsifiable experiments."
       ],
       "when": [
         "Building or extending an agent runtime with tools and a usable workspace."
@@ -228,7 +231,8 @@
       ],
       "limits": [
         "Snapshot checks trust supplied data and provide no authorization.",
-        "No live provider, deployed GUI, or comparative effectiveness verification."
+        "No live provider, deployed GUI, or comparative effectiveness verification.",
+        "Invention seeds have unverified novelty; improved creativity and live-repair performance are unmeasured."
       ],
       "evaluations": [
         "22 offline media tests and 14 workspace snapshot checks passed."

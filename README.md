@@ -18,14 +18,16 @@ Already using CopilotKit OpenDots? [Use the OpenDots edition](skills/agents/open
 
 These packages contain skills and local helpers. Your agent must implement and verify the workspace. Model access and paid services are configured separately.
 
+Super Manus also includes [an invention lab](skills/agents/agent-workspace-builder/references/invention-lab.md): develop unusual mechanisms, inspect prior art, and test the strongest idea against a conventional baseline. Explore actors, live images, incremental computation, and tools designed for LLM programmers.
+
 ## The collection
 
 | Skill | Category | Purpose | Details |
 | --- | --- | --- | --- |
 | Statechart Design and Review | Design review | Review event-driven lifecycles with explicit states, guards, invariants and traces | [Catalog](catalog/statechart-design-review.md) |
 | Resume drift check 0.2.0 | Recovery checks | Compare saved claims with current observations before resuming work | [Catalog](catalog/resume-drift-check.md) |
-| Super Manus Builder 0.2.0 | Agent workspaces | Extend any agent with reusable capabilities, GUI, Kanban, artifacts, and teams | [Catalog](catalog/agent-workspace-builder.md) |
-| Super Manus for OpenDots 0.2.0 | Agent workspaces | Build Manus-style workflows, agent teams, and editable image/video production on OpenDots | [Catalog](catalog/opendots-super-manus.md) |
+| Super Manus Builder 0.3.0 | Agent workspaces | Extend any agent with reusable capabilities, GUI, Kanban, artifacts, and teams | [Catalog](catalog/agent-workspace-builder.md) |
+| Super Manus for OpenDots 0.3.0 | Agent workspaces | Build Manus-style workflows, agent teams, and editable image/video production on OpenDots | [Catalog](catalog/opendots-super-manus.md) |
 
 Open [the visual catalog](docs/index.html) from a downloaded copy in your browser. It works offline without scripts, external fonts or tracking. This repository does not require a hosted website.
 

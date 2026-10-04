@@ -35,6 +35,8 @@ Every enabled capability needs a user task, expected artifact/effect, observable
 | Human collaboration | Attributable edits, roles, revision conflicts | Removed collaborator loses access to files and tools |
 | GUI and Kanban | Real task creation, events, artifacts, keyboard move, refresh/reconnect | Invalid transitions refused; simultaneous edits conflict safely |
 | Build a capability | Actual registered adapter invoked from the UI with persisted output | Broken candidate rolls back; task resumes on pinned working version |
+| Invent a new interaction | Distinct mechanisms, inspected predecessors, baseline, falsifier, explicit novelty status | Closest prior art eliminates novelty claim; candidate is revised or shelved |
+| Live repair experiment | Scoped state/behavior patch, migration, actual before/after evidence | Old messages, failed migration, stale activation, and irreversible effects remain accounted for |
 | Missing services | Specific setup state and useful independent preparation | No fake media, fake workers, or “running overnight” promise |
 
 Use synthetic test identities and local fixtures for offline scenarios. Do not send real messages, publish, buy media, or modify production solely to test a skill without task authorization.

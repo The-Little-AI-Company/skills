@@ -85,6 +85,42 @@
       ],
       "expected_output": "Evidence-backed findings and verdict",
       "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "inventor",
+      "goal": "Develop structurally different mechanisms against an actual user problem",
+      "tool_categories": [
+        "search",
+        "fetch",
+        "artifact_read",
+        "artifact_write"
+      ],
+      "expected_output": "Candidate mechanisms, changed assumptions, and visible payoffs",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "prior-art-scout",
+      "goal": "Find the closest predecessors and evidence against novelty",
+      "tool_categories": [
+        "search",
+        "fetch",
+        "artifact_read",
+        "artifact_write"
+      ],
+      "expected_output": "Sourced overlaps, proposed differences, and uncertainty",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
+    },
+    {
+      "role": "experimental-skeptic",
+      "goal": "Design a fair comparison and attack the core premise",
+      "tool_categories": [
+        "search",
+        "fetch",
+        "artifact_read",
+        "artifact_write"
+      ],
+      "expected_output": "Falsifier, invariants, counterexamples, and keep/revise/shelve recommendation",
+      "scope_rule": "Use only assigned artifacts/accounts and inherited permissions; do not send, publish, or spend outside task authorization."
     }
   ]
 }

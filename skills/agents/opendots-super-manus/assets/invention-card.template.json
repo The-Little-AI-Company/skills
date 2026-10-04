@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "template": true,
+  "status": "hypothesis",
+  "title": "",
+  "user_and_job": "",
+  "observed_friction": {
+    "facts": [],
+    "assumptions": []
+  },
+  "conventional_baseline": "",
+  "historical_mechanism": "",
+  "changed_assumption": "",
+  "new_interaction": "",
+  "llm_programmer_role": "",
+  "human_controls": [],
+  "invariants": [],
+  "prior_art": {
+    "queries": [],
+    "closest_matches": [],
+    "proposed_difference": "",
+    "novelty_status": "unverified"
+  },
+  "strongest_counterargument": "",
+  "specimen": {
+    "scope": "",
+    "not_in_scope": [],
+    "inputs": [],
+    "comparison_conditions": []
+  },
+  "experiment": {
+    "claim": "",
+    "success_condition": "",
+    "failure_condition": "",
+    "metrics": [],
+    "results": null,
+    "sample_size": 0,
+    "evidence": []
+  },
+  "authority": {
+    "paid_spend_limit_usd": 0,
+    "external_side_effects_authorized": false
+  },
+  "decision": {
+    "outcome": "unresolved",
+    "reason": "",
+    "next_action": ""
+  }
+}

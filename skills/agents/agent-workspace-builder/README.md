@@ -57,6 +57,23 @@ The bundle maps 60 researched capability families to implementation paths and ac
 
 Building on CopilotKit? Use [Super Manus for OpenDots](https://skills.sh/the-little-ai-company/skills/opendots-super-manus).
 
+## Ask it to invent something worth building
+
+Super Manus now has an invention workflow: question an inherited assumption, revisit an old mechanism, and test what changes when an LLM is the programmer. It explores actors, live state repair, incremental computation, and agent-oriented interfaces alongside conventional options.
+
+```text
+Use agent-workspace-builder in invent mode. Find a recurring frustration in agent workflows.
+Generate 12 structurally different ideas across at least four mechanisms.
+Include actors or live runtime images, and interfaces designed for LLM programmers.
+Search for the closest existing systems. Keep one feasible option, one strange
+option, and a strong conventional baseline. For each finalist, explain the new
+interaction, the strongest counterargument, and a cheap experiment that could
+prove it wrong. Stay within existing access and a $0 external-spend ceiling.
+Return the best next experiment. Do not claim the ideas are novel without evidence.
+```
+
+The [invention lab](references/invention-lab.md) includes a prior-art process, eight untested seeds, experiment cards, team roles, and live-repair failure cases. It adds a method for developing and testing ideas; improved creativity or performance has not been measured.
+
 ## Checks
 
 ```sh

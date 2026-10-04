@@ -2,7 +2,7 @@
 
 Make your agent build its own command center.
 
-Category: Agent workspaces. Version: 0.2.0. Published October 4, 2026 UTC.
+Category: Agent workspaces. Version: 0.3.0. Published October 4, 2026 UTC.
 
 Direct an agent to extend its own tools and build a persistent GUI with Kanban, task controls, artifact editing, capability status, and real team activity. Adapts to the existing runtime and stack.
 
@@ -23,3 +23,5 @@ Validation: 22 offline media tests and 14 workspace snapshot tests passed. The s
 MIT for authored material. Referenced vendors and sources retain their rights.
 
 The existing install ID stays unchanged. Version 0.2.0 adds clearer positioning, a first-use workflow, and an evidence-based demo and sharing playbook; it does not claim new production integrations.
+
+Version 0.3.0 adds invention mode: mechanism-first candidates, historical and current prior art, LLM-oriented interfaces, actor/live-image experiments, explicit falsifiers, eight untested seeds, and decision cards. See [the invention lab](../skills/agents/agent-workspace-builder/references/invention-lab.md). This is not a measured creativity improvement or a claim that live updates remove all deployment work.

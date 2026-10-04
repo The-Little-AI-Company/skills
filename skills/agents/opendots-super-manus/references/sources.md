@@ -85,3 +85,11 @@ Research cutoff: October 3, 2026 (America/Denver). Retrieval: October 4, 2026 UT
 ## Refresh procedure
 
 Read the current Manus docs index and latest release posts. Diff capability families and changed behavior; open each affected primary page. Re-audit the actual OpenDots revision. Validate model schemas, prices, account access, and SDK signatures before live work. Record changes and rerun only affected acceptance checks. Do not count an announcement, a catalog entry, or a mock test as a live capability. Keep dated source URLs and small original findings; avoid bundling vendor documentation wholesale.
+
+## Inherited-skill provenance
+
+The prior Manus-style skill could not be positively located in the installed personal skill checkout, retrieved personal context, or targeted file searches. This is a dedicated new OpenDots skill built from the user request and current research, not a claimed in-place update of an unidentified artifact. Preserve and reconcile the old skill when its exact source becomes available.
+
+## Invention extension
+
+See [prior-art lenses](invention-prior-art.md) for the actor/live-image, incremental-computation, local-first, and agent-interface sources checked October 4, 2026 UTC. Product seeds are original hypotheses with unverified novelty.

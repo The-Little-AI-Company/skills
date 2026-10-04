@@ -2,7 +2,7 @@
 
 Give your OpenDots agents a bigger job.
 
-Category: Agent workspaces. Version: 0.2.0. Published October 4, 2026 UTC.
+Category: Agent workspaces. Version: 0.3.0. Published October 4, 2026 UTC.
 
 Build and operate Manus-style workflows on CopilotKit OpenDots: bounded agent teams, research, editable deliverables, image/video production, connectors, and durable work.
 
@@ -23,3 +23,5 @@ Validation: 22 offline queue tests and two bounded independent workflow checks. 
 Independent work by The Little AI Company. No affiliation with the referenced vendors. MIT for authored text and code; sources retain their rights.
 
 The existing install ID stays unchanged. Version 0.2.0 adds clearer positioning, a first-use workflow, and an evidence-based demo and sharing playbook; it does not claim new production integrations.
+
+Version 0.3.0 adds invention mode: mechanism-first candidates, historical and current prior art, LLM-oriented interfaces, actor/live-image experiments, explicit falsifiers, eight untested seeds, and decision cards. See [the invention lab](../skills/agents/opendots-super-manus/references/invention-lab.md). This is not a measured creativity improvement or a claim that live updates remove all deployment work.

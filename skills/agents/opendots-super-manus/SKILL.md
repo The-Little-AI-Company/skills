@@ -1,6 +1,6 @@
 ---
 name: opendots-super-manus
-description: "Build Super Manus on CopilotKit OpenDots: agent teams, durable tasks, research, browser/computer use, editable documents, websites, games, image and video production, audio, connectors, and automation. Use to extend or operate an OpenDots project, audit Manus-style capability coverage, integrate providers, or prepare an evidence-based Super Manus demo or launch. Includes fal/Higgsfield helpers, Codex image-tool routing, source-linked capability coverage, and implementation checks. The target application still needs implementation, configuration, and live verification."
+description: 'Build Super Manus on CopilotKit OpenDots: agent teams, durable tasks, research, browser/computer use, editable documents, websites, games, image and video production, audio, connectors, and automation. Use for original product ideas, LLM-oriented invention, actor/live-image experiments, or to extend or operate an OpenDots project, audit Manus-style capability coverage, integrate providers, or prepare an evidence-based Super Manus demo or launch. Includes fal/Higgsfield helpers, Codex image-tool routing, source-linked capability coverage, and implementation checks. The target application still needs implementation, configuration, and live verification.'
 ---
 
 # Super Manus for OpenDots
@@ -13,9 +13,17 @@ For a first demonstration, connect one real request to persistent tasks, an actu
 
 Turn an outcome into verified work that the user can inspect, edit, resume, and reuse. Cover the full requested workflow, including editable sources and delivery. Match the user's scope and budget; do not turn a small task into a platform rewrite.
 
+## Invent beyond the current feature list
+
+Use **invent** mode for original ideas, unusual interactions, and alternative architectures. Read [invention lab](references/invention-lab.md) and [prior-art lenses](references/invention-prior-art.md). Explore old mechanisms applied under changed constraints, including actors, live runtime images, incremental computation, and interfaces designed for LLM programmers.
+
+Generate structurally different candidates, search for their closest predecessors, retain a surprising option, and design a cheap experiment against a competent conventional baseline. Name what changes for the user and what could disprove the idea. Do not equate a new language, renamed chatbot, or stack rewrite with invention. Keep novelty unverified until researched, and keep usefulness separate from novelty.
+
+For an invention request, the default CSV demo is only an example; choose the specimen that tests the proposed mechanism. For a build request, implement the selected authorized specimen and compare actual results. Record decisions with `assets/invention-card.template.json`; use `assets/invention-seeds.json` to widen the search, never as evidence that an idea is new. Live repair requires real migration, isolation, authority, and recovery; it does not automatically eliminate compilation, CI, or deployment.
+
 ## Start with the actual environment
 
-1. Identify the mode: **build** extends an OpenDots checkout; **operate** completes a user task; **audit** measures gaps; **plan** prepares an approach without executing it. Creating this skill does not authorize deploying OpenDots or buying media.
+1. Identify the mode: **build** extends an OpenDots checkout; **operate** completes a user task; **audit** measures gaps; **invent** researches candidate ideas and experiments; **plan** prepares an approach without executing it. Creating this skill does not authorize deploying OpenDots or buying media.
 2. Read repository instructions and the current implementation. For a build or audit, run `python3 <skill-dir>/scripts/audit_opendots.py <repo>`, then inspect its named files. Source hints do not certify a running installation.
 3. Inventory callable tools, installed skills, integrations, accounts, server/sandbox resources, and authorization. Never print secrets. Separate **documented**, **implemented**, **configured**, **verified**, **blocked**, and **unsupported**.
 4. Read [the capability map](references/manus-capabilities.md) and select relevant IDs. Read [OpenDots integration](references/opendots-integration.md) before application changes. Load other references only as needed.

@@ -1,6 +1,6 @@
 ---
 name: agent-workspace-builder
-description: "Build your own Super Manus: a coding agent that extends its tools and creates a persistent GUI with Kanban, real task controls, agent teams, and editable results. Use to build or extend an agent workspace, add missing capabilities, create a Manus-style assistant, or prepare an evidence-based Super Manus demo or launch. Adapts to the actual runtime; no OpenDots dependency. Covers research, code, documents, images, video, connectors, and automation with implementation contracts and local helpers. The target agent must implement and verify the application."
+description: 'Build your own Super Manus: a coding agent that extends its tools and creates a persistent GUI with Kanban, real task controls, agent teams, and editable results. Use for original product ideas, LLM-oriented invention, actor/live-image experiments, or to build or extend an agent workspace, add missing capabilities, create a Manus-style assistant, or prepare an evidence-based Super Manus demo or launch. Adapts to the actual runtime; no OpenDots dependency. Covers research, code, documents, images, video, connectors, and automation with implementation contracts and local helpers. The target agent must implement and verify the application.'
 ---
 
 # Super Manus Builder
@@ -17,10 +17,18 @@ For a demo or launch request, read [show and share](references/show-and-share.md
 
 Turn the agent into a useful working system by building actual tools, connecting them to persistent execution, and exposing their results in an understandable interface. Reuse the current framework and functioning components. A skill alone does not install capabilities or launch background workers.
 
+## Invent beyond the current feature list
+
+Use **invent** mode for original ideas, unusual interactions, and alternative architectures. Read [invention lab](references/invention-lab.md) and [prior-art lenses](references/invention-prior-art.md). Explore old mechanisms applied under changed constraints, including actors, live runtime images, incremental computation, and interfaces designed for LLM programmers.
+
+Generate structurally different candidates, search for their closest predecessors, retain a surprising option, and design a cheap experiment against a competent conventional baseline. Name what changes for the user and what could disprove the idea. Do not equate a new language, renamed chatbot, or stack rewrite with invention. Keep novelty unverified until researched, and keep usefulness separate from novelty.
+
+For an invention request, the default CSV demo is only an example; choose the specimen that tests the proposed mechanism. For a build request, implement the selected authorized specimen and compare actual results. Record decisions with `assets/invention-card.template.json`; use `assets/invention-seeds.json` to widen the search, never as evidence that an idea is new. Live repair requires real migration, isolation, authority, and recovery; it does not automatically eliminate compilation, CI, or deployment.
+
 ## Establish the starting point
 
 1. Read project instructions and inspect the runtime, tool registration, model SDK, server, persistence, UI, authentication, deployment, and package commands. Identify what exists and what is missing. If there is no application, choose a small local-first architecture compatible with the available runtime; state the assumption and build it.
-2. Distinguish **build** (implement features), **operate** (complete work), **audit** (inspect), and **plan** (prepare only). Default to implementation when the user asks to build. Do not stop at a PRD or a mock dashboard.
+2. Distinguish **build** (implement features), **operate** (complete work), **audit** (inspect), **invent** (research candidates and experiments), and **plan** (prepare only). Default to implementation when the user asks to build. Do not stop at a PRD or a mock dashboard.
 3. Inventory actual tools, subagents, installed skills, accounts, compute, licenses, and authorization. Keep secrets out of output. Native host tools may be unavailable to a separately deployed agent.
 4. Define the requested outcomes, editable artifacts, target users, existing permission, budget, and acceptance checks. Ask only for material missing information. Continue useful authorized work when an external service is unavailable.
 5. Read [runtime integration](references/runtime-integration.md), [capability construction](references/capability-construction.md), and [GUI and Kanban](references/gui-kanban.md). Select relevant capability IDs from [the researched map](references/manus-capabilities.md); its 60 entries are a reference menu, not a demand to implement everything for every task.

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "untested prompts for invention, not novel-product claims",
+  "seeds": [
+    {
+      "id": "I01",
+      "working_name": "Living workbench",
+      "mechanism": "Inspectable state objects plus staged behavior patches",
+      "experience": "Select a broken workspace object; compare a proposed repair on its retained state.",
+      "difference_to_test": "Less context reconstruction and fewer lost edits than whole-app correction.",
+      "falsifier": "State migration, observation, or recovery costs erase the gain."
+    },
+    {
+      "id": "I02",
+      "working_name": "A game world you can mend",
+      "mechanism": "Actor-local rules plus versioned simulation snapshots",
+      "experience": "Demonstrate a changed creature behavior while unrelated parts of a small world continue.",
+      "difference_to_test": "Useful controlled rule changes during play with preserved world identity.",
+      "falsifier": "Rule changes cannot preserve simulation invariants or feel less understandable than ordinary editing."
+    },
+    {
+      "id": "I03",
+      "working_name": "Assumption microscope",
+      "mechanism": "Incremental dataflow plus source-backed dependency graph",
+      "experience": "Change one assumption in research; see only affected conclusions recompute with provenance.",
+      "difference_to_test": "Faster inspectable revisions than regenerating the full report.",
+      "falsifier": "Hidden dependencies produce stale conclusions or full recomputation is simpler and equally effective."
+    },
+    {
+      "id": "I04",
+      "working_name": "Counterexample workshop",
+      "mechanism": "Bounded operation grammar plus executable examples",
+      "experience": "Show a tool one accepted and one rejected behavior; inspect the smallest proposed correction.",
+      "difference_to_test": "Counterexamples reduce repair iterations relative to prose error reports.",
+      "falsifier": "Example overfitting, representation cost, or missing semantics causes more failures."
+    },
+    {
+      "id": "I05",
+      "working_name": "Offline field studio",
+      "mechanism": "Portable local project state plus explicit reconciliation",
+      "experience": "Keep editing plans, media notes, and data during disconnection; selectively reconcile on return.",
+      "difference_to_test": "Continuity on low-connectivity devices with user-owned outputs.",
+      "falsifier": "Model/hardware requirements exceed the device or existing local-first tools already solve the job."
+    },
+    {
+      "id": "I06",
+      "working_name": "Branchable rehearsal room",
+      "mechanism": "Snapshot branches with external effects replaced by recorded fixtures",
+      "experience": "Rehearse an agent workflow on the same input state and compare divergent outcomes before activation.",
+      "difference_to_test": "Actionable behavior comparisons with fewer accidental side effects.",
+      "falsifier": "The rehearsal omits essential nondeterminism or simulated providers mislead the decision."
+    },
+    {
+      "id": "I07",
+      "working_name": "A document that can show its machinery",
+      "mechanism": "Live document objects with bounded tools and editable projections",
+      "experience": "Select a chart, ask how it was made, change one operation, and retain both source and human edits.",
+      "difference_to_test": "Lower effort to understand and revise generated artifacts.",
+      "falsifier": "Projection/source conflicts destroy edits or existing notebooks provide the same interaction."
+    },
+    {
+      "id": "I08",
+      "working_name": "Repairable personal automations",
+      "mechanism": "Supervised small workers with versioned state and effect receipts",
+      "experience": "Replace a failing parser while retaining queued work and seeing which actions already happened.",
+      "difference_to_test": "Less rework and more understandable recovery for a solo operator.",
+      "falsifier": "Duplicate effects, incompatible queued messages, or operating overhead make normal redeployment preferable."
+    }
+  ]
+}

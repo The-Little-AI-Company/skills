@@ -53,3 +53,7 @@ Match the draft to the requested channel and its currently verified constraints.
 When the user wants to share, offer a compact case study containing the original problem, exact prompt, actual resulting artifact, visible edit, reproducible setup, and honest limits. Link the relevant skill so another builder can try it. Attribution is optional for the user's own outputs; never add hidden tracking, forced watermarks, or referral parameters.
 
 Use voluntary feedback to improve the skill: ask what the agent could not finish and what setup was missing. Reproduce actionable failures, fix instructions or adapters, and publish a versioned change. Track actual install-to-first-result observations only with authorized analytics. Do not treat views, likes, stars, fixture tests, or one successful demo as proof of broad effectiveness.
+
+## Demonstrate an invention honestly
+
+When promoting an invention, show the specific changed interaction, the closest known predecessor, the baseline comparison, and the observed outcome. Label concept, prototype, and verified behavior separately. Use [the invention lab](invention-lab.md) to turn a provocative premise into an experiment. Do not claim a new computing paradigm or a disappeared deployment loop from a mockup.
