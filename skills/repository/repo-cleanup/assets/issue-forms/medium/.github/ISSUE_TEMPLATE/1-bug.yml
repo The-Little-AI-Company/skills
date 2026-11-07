@@ -1,0 +1,66 @@
+name: Bug report
+description: Report behavior that differs from the documentation.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search open and closed issues first. For help using the project, use the support link on the previous page.
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Start from a clean setup. A link to a small repository is best.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Use the exact version, not "latest".
+    validations:
+      required: true
+  - type: dropdown
+    id: history
+    attributes:
+      label: Did this work before
+      options:
+        - Worked in an earlier version
+        - Never worked for me
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, runtime version, and how you installed the project.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Remove secrets and personal data before you paste.
+      render: text
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched for an existing issue.
+          required: true

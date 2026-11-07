@@ -183,8 +183,8 @@ def his011(ctx):
 @check("TAG-003", "tags", "A release in the last year", "low", "report", "github", "CNCF CLOMonitor recent_release", skip=NO_RELEASES)
 def tag003(ctx):
     rows = ctx.api(f"repos/{ctx.slug}/releases?per_page=1", missing_ok=True) or []
-    if not rows:
-        return note("no GitHub releases")
+    if not rows or not rows[0].get("published_at"):
+        return note("no published GitHub releases")
     age = datetime.now(timezone.utc) - datetime.fromisoformat(rows[0]["published_at"].replace("Z", "+00:00"))
     return ok(rows[0]["tag_name"]) if age.days <= 365 else note(f"latest release {rows[0]['tag_name']} is {age.days} days old")
 
@@ -499,7 +499,7 @@ def gov014(ctx):
 
 # Metadata
 
-@check("MET-001", "metadata", "Description present", "medium", "setting", "github", "Shown in search and link previews. The target is an opinion", opinion=True)
+@check("MET-001", "metadata", "Description present", "low", "setting", "github", "Shown in search and link previews. The target is an opinion", opinion=True)
 def met001(ctx):
     d = ctx.meta().get("description") or ""
     return ok() if d.strip() else bad("no description, so search results and link previews are blank")
@@ -515,16 +515,16 @@ def met002(ctx):
     return note("no homepage set") if site and "github" not in site.group(0) else ok()
 
 
-@check("MET-003", "metadata", "Topics set", "medium", "setting", "github", "GitHub allows 1 to 20. The minimum is an opinion", when=private_skip, opinion=True)
+@check("MET-003", "metadata", "Topics set", "low", "setting", "github", "GitHub allows 1 to 20. The minimum is an opinion", when=private_skip, opinion=True)
 def met003(ctx):
     n = ctx.meta().get("topics") or []
     return ok(f"{len(n)} topics") if 1 <= len(n) <= 20 else bad("no topics, so GitHub topic pages and search cannot find this repository")
 
 
-@check("MET-004", "metadata", "Custom social preview", "medium", "setting", "github", "1280 by 640, under 1 MB. Having one is an opinion", skip=("dotfiles", "profile"), when=private_skip, opinion=True)
+@check("MET-004", "metadata", "Custom social preview", "info", "setting", "github", "1280 by 640, under 1 MB. Having one is an opinion", skip=("dotfiles", "profile"), when=private_skip, opinion=True)
 def met004(ctx):
     d = ctx.graphql("query($o:String!,$n:String!){repository(owner:$o,name:$n){usesCustomOpenGraphImage}}")
-    return ok() if d["repository"]["usesCustomOpenGraphImage"] else bad("links to this repository unfurl with a generated card")
+    return ok() if d["repository"]["usesCustomOpenGraphImage"] else note("links to this repository unfurl with a generated card")
 
 
 @check("MET-005", "metadata", "Unused features turned off", "low", "setting", "github", "Empty tabs read as abandoned. The target is an opinion", opinion=True)

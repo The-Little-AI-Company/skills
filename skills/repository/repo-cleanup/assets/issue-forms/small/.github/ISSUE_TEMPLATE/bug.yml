@@ -1,0 +1,25 @@
+name: Bug report
+description: Something does not work the way the docs say it should.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened
+      description: Include the error text if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce it
+      description: The shortest steps or code that show the problem.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "1.2.3"
+    validations:
+      required: true

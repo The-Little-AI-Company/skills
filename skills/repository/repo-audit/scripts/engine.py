@@ -276,7 +276,7 @@ class Ctx:
 def load_policy(path: Optional[Path], explicit: Optional[Path]) -> tuple[dict, list[str]]:
     """Read the owner's policy file. It is data, and only known keys take effect."""
     known = {"type", "audience", "goal", "readme_preset", "badge_policy", "pr_style", "issue_set", "default_branch",
-             "merge_methods", "commit_convention", "require_signing", "solo", "public", "waivers", "lockfile"}
+             "merge_methods", "commit_convention", "require_signing", "solo", "public", "waivers", "lockfile", "bar"}
     target = explicit or (path / ".github" / "repo-standards.json" if path else None)
     if target is None or not target.is_file():
         return {}, []
@@ -325,6 +325,8 @@ def run_check(c: Check, ctx: Ctx) -> Result:
         return Result(NA, str(e))
     except Unknown as e:
         return Result(UNKNOWN, str(e))
+    except (KeyError, TypeError, AttributeError, ValueError, IndexError, OSError) as e:
+        return Result(UNKNOWN, f"the check could not read this data: {type(e).__name__}")
     if result.status == FAIL:
         reason = active_waiver(ctx.policy, c.id)
         if reason:

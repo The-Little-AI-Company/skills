@@ -1,0 +1,111 @@
+name: Bug report
+description: Report a defect in a released version.
+title: "<area>: <short summary>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One problem per report. Security problems go through the private link on the previous page, not here.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Replace these options with your own packages or components.
+      options:
+        - Core
+        - Interface
+        - Documentation
+        - Build and install
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Data loss or corruption
+        - Blocks my work with no workaround
+        - Has a workaround
+        - Minor or cosmetic
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version where it fails
+      description: Use the version command, and paste its output.
+    validations:
+      required: true
+  - type: input
+    id: last-good
+    attributes:
+      label: Last version that worked
+      description: Leave empty if you do not know.
+  - type: dropdown
+    id: install
+    attributes:
+      label: How you installed it
+      options:
+        - Package manager
+        - Container image
+        - Built from source
+        - Hosted service
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Paste the output of the project's diagnostic command, if there is one.
+      render: text
+  - type: input
+    id: repro-link
+    attributes:
+      label: Link to a minimal reproduction
+      description: A public repository or sandbox that shows only this problem.
+      placeholder: https://
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened instead
+      description: Attach screenshots here if they help.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Remove secrets and personal data before you paste.
+      render: text
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched open and closed issues.
+          required: true
+        - label: I reproduced this on the newest release.
+          required: true

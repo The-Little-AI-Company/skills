@@ -1,0 +1,54 @@
+name: Feature request
+description: Propose a change. Larger proposals may move to a design discussion.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the situation, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Who this affects
+      description: Which users, and roughly how often they hit this?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Include example usage if you can.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: compatibility
+    attributes:
+      label: Effect on existing users
+      options:
+        - No effect
+        - New optional behavior
+        - Changes existing behavior
+        - Removes something
+        - Not sure
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you work on this
+      options:
+        - I can open a pull request
+        - I can help test
+        - Not at this time
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched existing issues and discussions.
+          required: true

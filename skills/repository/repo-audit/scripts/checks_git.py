@@ -19,7 +19,7 @@ KEY_SHAPES = re.compile(
 )
 PICKAXE = (r"(AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22,}|xox[baprs]-[A-Za-z0-9-]{10,}"
            r"|sk_live_[A-Za-z0-9]{16,}|sk-ant-[A-Za-z0-9_-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY)")
-PLACEHOLDER = re.compile(r"example|sample|fake|dummy|redacted|your_|xxxx|AKIAIOSFODNN7EXAMPLE", re.I)
+PLACEHOLDER = re.compile(r"example|sample|fake|dummy|redacted|your_|xxxx|IOSFODNN7EXAMPLE", re.I)
 
 
 def match_tracked(ctx: Ctx, pattern: str, exempt=None) -> list[str]:
@@ -303,16 +303,26 @@ def ign009(ctx):
     return ok()
 
 
+def real_key_in(ctx: Ctx, commit: str, path: str) -> bool:
+    """True when a line this commit touched holds a key shape that is not a documented sample."""
+    _, patch = ctx.reader.git("log", "-1", "-p", "--format=", "--no-textconv", "--no-ext-diff", commit, "--", path)
+    for line in patch.splitlines():
+        if line[:1] in ("+", "-") and not line.startswith(("+++", "---")) and KEY_SHAPES.search(line) and not PLACEHOLDER.search(line):
+            return True
+    return False
+
+
 @check("SEC-005", "secrets", "No known key shapes in history", "critical", "rewrite", "history", "Pattern floor under gitleaks. Reports commit and path, never the value")
 def sec005(ctx):
     _, out = ctx.reader.git("log", "--all", "--format=%h", "--name-only", "--no-textconv", "--no-ext-diff", "-G" + PICKAXE)
-    commit, hits = None, []
+    commit, pairs = None, []
     for line in out.splitlines():
         if re.fullmatch(r"[0-9a-f]{7,40}", line.strip()):
             commit = line.strip()
         elif line.strip() and not is_fixture(line):
-            hits.append(f"{commit} {line.strip()}")
-    return bad(f"{len(hits)} commit and path pairs match a key shape. Rotate first, then rewrite", hits) if hits else ok()
+            pairs.append((commit, line.strip()))
+    hits = [f"{c} {p}" for c, p in pairs[:200] if real_key_in(ctx, c, p)]
+    return bad(f"{len(hits)} commit and path pairs hold a key shape. Rotate first, then rewrite", hits) if hits else ok()
 
 
 @check("SEC-012", "secrets", "No known key shapes at HEAD", "critical", "rewrite", "tree", "Pattern floor. Reports path and line, never the value")

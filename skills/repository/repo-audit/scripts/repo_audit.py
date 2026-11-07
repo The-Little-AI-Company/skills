@@ -65,8 +65,26 @@ def build(path, slug, online, policy_file=None) -> dict:
         "notes": notes,
         "summary": {"pass": counts[PASS], "fail": counts[FAIL], "info": counts[INFO], "unknown": counts[UNKNOWN], "not_applicable": counts[NA],
                     "waived": counts[WAIVED], "measured": measured, "applicable": measured + counts[UNKNOWN]},
+        "bar": bar(rows, policy.get("bar")),
         "checks": rows,
     }
+
+
+def bar(rows: list, wanted=None) -> dict:
+    """The highest bar these rows reach before verification. Judgment can only lower immaculate."""
+    fails = [r for r in rows if r["status"] == FAIL]
+    high = sum(r["severity"] in ("critical", "high") for r in fails)
+    medium = sum(r["severity"] == "medium" for r in fails)
+    unknown = sum(r["status"] == UNKNOWN for r in rows)
+    if high:
+        reached = "below presentable"
+    elif medium:
+        reached = "presentable"
+    elif fails or unknown:
+        reached = "strong"
+    else:
+        reached = "immaculate, pending the judgment list"
+    return {"reached": reached, "wanted": wanted or "not set", "high_or_critical_failures": high, "medium_failures": medium, "other_failures": len(fails) - high - medium, "unknown": unknown}
 
 
 def _safe(fn):
@@ -96,6 +114,8 @@ def render(report: dict) -> str:
         out.append(f"State: {', '.join(report['modifiers'])}.")
     if "archived" in report["modifiers"]:
         out.append("This repository is archived, so GitHub refuses writes. Treat fixes as advice.")
+    b = report["bar"]
+    out += ["", f"Measured bar: **{b['reached']}** (wanted: {b['wanted']}). {b['high_or_critical_failures']} critical or high failures, {b['medium_failures']} medium, {b['other_failures']} lower, {b['unknown']} unknown."]
     out += ["", f"Measured {s['measured']} of {s['applicable']} applicable checks: {s['pass']} passed, {s['fail']} failed, {s['info']} noted, {s['waived']} waived. {s['unknown']} could not be measured, and {s['not_applicable']} do not apply.", ""]
     for n in report["notes"]:
         out.append(f"Note: {n}")

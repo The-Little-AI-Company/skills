@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/OWNER/REPO/security/advisories/new
+    about: Please report vulnerabilities privately. Do not open a public issue.
+  - name: Ask a question
+    url: https://github.com/OWNER/REPO/discussions/categories/q-a
+    about: Questions and how-to help belong in Discussions.
+  - name: Read the documentation
+    url: https://github.com/OWNER/REPO#readme
+    about: Setup, configuration and troubleshooting.

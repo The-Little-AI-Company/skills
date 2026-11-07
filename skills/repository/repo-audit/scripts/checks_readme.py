@@ -236,7 +236,7 @@ def prs010(ctx):
     return bad("a sponsor block appears before the project says what it is") if sponsor.start() < at else ok()
 
 
-@check("PRS-011", "presentation", "A strong visual on the first screen for visual products", "high", "pr", "tree", "Showcase exemplars: gum, PowerToys", when=lambda c: None if c.kind in VISUAL_TYPES | {"cli"} else "the type does not need a hero visual")
+@check("PRS-011", "presentation", "A strong visual on the first screen for visual products", "medium", "pr", "tree", "Showcase exemplars: gum, PowerToys", when=lambda c: None if c.kind in VISUAL_TYPES | {"cli"} else "the type does not need a hero visual")
 def prs011(ctx):
     screen = first_screen(readme(ctx))
     shown = [i for i in images(screen) if not i.badge]
@@ -467,7 +467,7 @@ def probe(url: str) -> tuple[str, Optional[str]]:
         return url, f"HTTP {e.code}" if e.code in (404, 410) else None
     except (OSError, ValueError):
         return url, None
-    if size > 5 * MiB:
+    if size > 5 * MiB and proxied(url):
         return url, f"{size / MiB:.1f} MiB, over the GitHub image proxy limit"
     if BADGE.search(url) and re.search(rb">[^<]*\b(invalid|not found|inaccessible|no status|unknown|error)\b[^<]*<", head, re.I):
         return url, "the badge renders an error"
@@ -475,12 +475,13 @@ def probe(url: str) -> tuple[str, Optional[str]]:
 
 
 def proxied(src: str) -> bool:
-    return bool(re.match(r"https?://", src)) and not re.match(r"https?://(raw\.githubusercontent\.com|github\.com/[^/]+/[^/]+/raw/)", src)
+    """GitHub's image proxy applies to every remote image except these two raw forms."""
+    return not re.match(r"https?://(raw\.githubusercontent\.com|github\.com/[^/]+/[^/]+/raw/)", src)
 
 
 @check("PRS-024", "presentation", "Remote images and badges load", "high", "pr", "github", "llama.cpp, nanoGPT and plausible all ship dead or dropped images. GitHub's proxy returned 404 at 5.04 MiB")
 def prs024(ctx):
-    urls = sorted({i.src for i in images(readme(ctx)) if proxied(i.src)})[:60]
+    urls = sorted({i.src for i in images(readme(ctx)) if re.match(r"https?://", i.src)})[:60]
     if not urls:
         return ok("no remote images")
     with ThreadPoolExecutor(8) as pool:

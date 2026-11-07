@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a change to how the project works.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is hard or impossible today, and who does that affect?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Workarounds and alternatives
+      description: What do you do today, and what else did you consider?
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you work on this
+      options:
+        - I can open a pull request
+        - I can help test
+        - Not at this time
